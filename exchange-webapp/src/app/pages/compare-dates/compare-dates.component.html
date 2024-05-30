@@ -1,0 +1,47 @@
+<div class="compare-dates">
+  <div class="compare-dates__inputs">
+    <mat-form-field>
+      <mat-label>Fecha Inicial</mat-label>
+      <input matInput [matDatepicker]="initialDate" (dateChange)="onDateChange('initialDateValue', $event)" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="initialDate"></mat-datepicker-toggle>
+      <mat-datepicker #initialDate></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Fecha Final</mat-label>
+      <input matInput [matDatepicker]="finalDate" (dateChange)="onDateChange('initialDateValue', $event)" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="finalDate"></mat-datepicker-toggle>
+      <mat-datepicker #finalDate></mat-datepicker>
+    </mat-form-field>
+
+    <button class="compare-dates__inputs__button" (click)="compareDates()">Comparar</button>
+  </div>
+
+  <ng-container *ngIf="compareDatesResponse()">
+    <div class="compare-dates__content">
+      <div class="compare-dates__content__dates">
+        <div class="compare-dates__content__dates__date">
+
+          <h2>Fecha Inicial:</h2>
+          <p>{{ initialDateValue() | date: 'MM/dd/yyyy' }}</p>
+        </div>
+
+        <div class="compare-dates__content__dates__date">
+          <h2>Fecha Final:</h2>
+          <p>{{ finalDateValue() | date: 'MM/dd/yyyy' }}</p>
+        </div>
+      </div>
+      <div class="compare-dates__content__result">
+        <div class="compare-dates__content__result__item">
+          <h2>Compra:</h2>
+          <p>Q {{ compareDatesResponse()?.compra }}</p>
+        </div>
+        <div class="compare-dates__content__result__item">
+          <h2>Venta:</h2>
+          <p>Q {{ compareDatesResponse()?.venta }}</p>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

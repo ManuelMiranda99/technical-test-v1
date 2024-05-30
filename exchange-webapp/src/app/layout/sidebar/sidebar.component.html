@@ -1,0 +1,18 @@
+<mat-drawer-container class="sidebar">
+  <mat-drawer mode="side" opened>
+    <div class="sidebar__drawer">
+      <h1 class="sidebar__drawer__title">Tipo de Cambio</h1>
+      <nav class="sidebar__drawer__navigation">
+        <a routerLink="/" class="sidebar__drawer__navigation__item">Home</a>
+        <a routerLink="/compare-dates" class="sidebar__drawer__navigation__item">Comparar fechas</a>
+        <a routerLink="logs" class="sidebar__drawer__navigation__item">Ver Logs</a>
+        <a routerLink="initial-date" class="sidebar__drawer__navigation__item">Cambio desde Fecha</a>
+      </nav>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="sidebar__content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

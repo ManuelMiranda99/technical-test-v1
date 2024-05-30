@@ -1,0 +1,37 @@
+<div class="logs">
+  <table>
+    <thead>
+      <tr>
+        <th>No. Peticion</th>
+        <th>Fecha</th>
+        <th>TC Venta</th>
+        <th>TC Compra</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let log of logs()">
+        <ng-container *ngIf="log.initialDate === log.finalDate; else multipleRows">
+          <tr class="top-bottom-border">
+            <td>{{ log.id }}</td>
+            <td>{{ log.initialDate }}</td>
+            <td>{{ log.initialPurchaseRate }}</td>
+            <td>{{ log.initialSaleRate }}</td>
+          </tr>
+        </ng-container>
+
+        <ng-template #multipleRows>
+          <tr class="top-border">
+            <td rowspan="2">{{ log.id }}</td>
+            <td>{{ log.initialDate }}</td>
+            <td>{{ log.initialPurchaseRate }}</td>
+            <td>{{ log.initialSaleRate }}</td>
+          </tr>
+          <tr class="bottom-border">
+            <td>{{ log.finalDate }}</td>
+            <td>{{ log.finalPurchaseRate }}</td>
+            <td>{{ log.finalSaleRate }}</td>
+          </tr>
+        </ng-template>
+      </ng-container>
+    </tbody>
+  </table>

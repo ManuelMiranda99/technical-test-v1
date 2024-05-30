@@ -1,0 +1,40 @@
+.sidebar {
+  height: 100vh;
+
+  &__drawer {
+    color: white;
+    background-color: #003366;
+    padding: 1rem 2rem;
+    height: 100%;
+
+    &__title {
+      text-decoration: underline;
+    }
+
+    &__navigation {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin-top: 1rem;
+
+      &__item {
+        padding: 1rem 0.5rem;
+        border-radius: 4px;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        background-color: #0059b2;
+
+        &:hover {
+          color: #003366;
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  &__content {
+    padding: 1.5rem;
+  }
+}

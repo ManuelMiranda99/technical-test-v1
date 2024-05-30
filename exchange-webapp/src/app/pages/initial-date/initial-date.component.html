@@ -1,0 +1,37 @@
+<div class="initial-date">
+  <div class="initial-date__inputs">
+    <mat-form-field>
+      <mat-label>Fecha Inicial</mat-label>
+      <input matInput [matDatepicker]="initialDate" (dateChange)="onDateChange($event)" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="initialDate"></mat-datepicker-toggle>
+      <mat-datepicker #initialDate></mat-datepicker>
+    </mat-form-field>
+    <button class="initial-date__inputs__button" (click)="getExchangeByInitialDate()">Obtener resultados</button>
+  </div>
+
+  <ng-container *ngIf="initialDateResponse().length">
+    <div class="initial-date__content">
+      <ng-container *ngFor="let item of initialDateResponse()">
+        <div class="initial-date__content__item">
+          <div class="initial-date__content__item__title">
+            <h2>Fecha:</h2>
+            <p>{{ item.fecha }}</p>
+          </div>
+
+          <div class="initial-date__content__item__results">
+            <div>
+              <h2>Compra:</h2>
+              <p>{{ item.compra }}</p>
+            </div>
+            <div>
+              <h2>Venta:</h2>
+              <p>{{ item.venta }}</p>
+            </div>
+          </div>
+
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,23 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__content {
+    text-wrap: balance;
+    letter-spacing: 2px;
+  }
+}

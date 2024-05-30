@@ -1,0 +1,52 @@
+.initial-date {
+  &__inputs {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+
+    &__button {
+      background-color: #003366;
+      border: 1px solid #0059b2;
+      border-radius: 0.25rem;
+      padding: 1.25rem 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      color: white;
+
+      &:hover {
+        background-color: #0059b2;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      background-color: #003366;
+      width: 100%;
+      max-width: 512px;
+      padding: 1rem;
+
+      &__title {
+        color: white;
+        font-weight: bold;
+        text-align: left;
+        padding: 10px;
+      }
+
+      &__results {
+        color: white;
+        display: flex;
+        gap: 1rem;
+      }
+    }
+  }
+}

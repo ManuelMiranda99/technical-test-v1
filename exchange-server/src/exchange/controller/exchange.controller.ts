@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { ExchangeService } from './exchange.service';
-import { CompareRatesByInitialDateDto, CompareRatesDto } from './dto';
+import { ExchangeService } from '../services/exchange.service';
+import { CompareRatesByInitialDateDto, CompareRatesDto } from '../dto';
 
 @Controller('exchange')
 export class ExchangeController {
@@ -23,5 +23,10 @@ export class ExchangeController {
     return this.exchangeService.getRatesByInitialDate(
       compareRatesByInitialDateDto,
     );
+  }
+
+  @Get('logs')
+  getLogs() {
+    return this.exchangeService.getLogs();
   }
 }
